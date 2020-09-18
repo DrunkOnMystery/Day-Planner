@@ -1,45 +1,18 @@
 //Establish variables
 var displayDateEl = document.querySelector("#currentDay");
-// var currentHourEl = document.querySelector(".past");
+
 var currentHour = moment().hour();
 
-// var button = $("<button>");
-// var icon = $("<i>");
 var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
 
 // Display the current time using Moment.js
 console.log(moment().format("dddd, MMMM Do"));
 console.log(moment().hour());
 
-// Click event to save text area content to Local Storage
-
 // When app opens, display content for each time block from local storage.
         //it can be done with a loop(more efficiently) or by targeting each time block separately
-        // hours.forEach(timeCheck);
-    function colorDisplay() {
-        for (i = 9; i < 18; i++) {
-            if (i < currentHour) {
-                $(".hour-" + i).addClass("past");
-            }
-            else if (i === currentHour) {
-                $(".hour-" + i).addClass("present");
-            }
-            else if (i > currentHour) {
-                $(".hour-" + i).addClass("future");
-            }
-        }
-    }
-//         function timeCheck() {
-//             console.log(moment().hour());
-//         if (currentHour === 9) {
-//             $("nineAMEL").addClass(".present");
-//             $("#nineAM").removeClass(".past");
-//         if (currentHour < 9) {
-//         $("#nineAM").addClass(".future");
-//         $("#nineAM").removeClass(".past");
-//         }
-//     }
-// }
+
+
 
 function storeDataNineAM() {
     var userNotes = document.getElementById("nineAMUserData");
@@ -90,6 +63,19 @@ function storeDataFivePM() {
 
 //Change time block background color depending on the current hour (past, present, future)
 
+function colorDisplay() {
+    for (i = 9; i < 18; i++) {
+        if (i < currentHour) {
+            $(".hour-" + i).addClass("past");
+        }
+        else if (i === currentHour) {
+            $(".hour-" + i).addClass("present");
+        }
+        else if (i > currentHour) {
+            $(".hour-" + i).addClass("future");
+        }
+    }
+}
 
 //Retrieve user inputs on initialize
 function initialize() {
