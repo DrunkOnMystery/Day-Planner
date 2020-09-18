@@ -2,6 +2,8 @@
 var displayDateEl = document.querySelector("#currentDay");
 
 var currentHour = moment().hour();
+//Tester for "off-hours"
+// var currentHour = 11;
 
 var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
 
@@ -16,46 +18,46 @@ console.log(moment().hour());
 
 function storeDataNineAM() {
     var userNotes = document.getElementById("nineAMUserData");
-    localStorage.setItem("nineAM", userNotes.value);
+    localStorage.setItem("hour-9", userNotes.value);
 }
 
 function storeDataTenAM() {
     var userNotes = document.getElementById("tenAMUserData");
-    localStorage.setItem("tenAM", userNotes.value);
+    localStorage.setItem("hour-10", userNotes.value);
 }
 
 function storeDataElevenAM() {
     var userNotes = document.getElementById("elevenAMUserData");
-    localStorage.setItem("elevenAM", userNotes.value);
+    localStorage.setItem("hour-11", userNotes.value);
 }
 
 function storeDataTwelvePM() {
     var userNotes = document.getElementById("twelvePMUserData");
-    localStorage.setItem("twelvePM", userNotes.value);
+    localStorage.setItem("hour-12", userNotes.value);
 }
 
 function storeDataOnePM() {
     var userNotes = document.getElementById("onePMUserData");
-    localStorage.setItem("onePM", userNotes.value);
+    localStorage.setItem("hour-13", userNotes.value);
 }
 
 function storeDataTwoPM() {
     var userNotes = document.getElementById("twoPMUserData");
-    localStorage.setItem("twoPM", userNotes.value);
+    localStorage.setItem("hour-14", userNotes.value);
 }
 
 function storeDataThreePM() {
     var userNotes = document.getElementById("threePMUserData");
-    localStorage.setItem("threePM", userNotes.value);
+    localStorage.setItem("hour-15", userNotes.value);
 }
 
 function storeDataFourPM() {
     var userNotes = document.getElementById("fourPMUserData");
-    localStorage.setItem("fourPM", userNotes.value);
+    localStorage.setItem("hour-16", userNotes.value);
 }
 function storeDataFivePM() {
     var userNotes = document.getElementById("fivePMUserData");
-    localStorage.setItem("fivePM", userNotes.value);
+    localStorage.setItem("hour-17", userNotes.value);
 }
 
 //Display the current date
@@ -79,15 +81,15 @@ function colorDisplay() {
 
 //Retrieve user inputs on initialize
 function initialize() {
-    document.getElementById("nineAMUserData").innerHTML = localStorage.getItem("nineAM");
-    document.getElementById("tenAMUserData").innerHTML = localStorage.getItem("tenAM");
-    document.getElementById("elevenAMUserData").innerHTML = localStorage.getItem("elevenAM");
-    document.getElementById("twelvePMUserData").innerHTML = localStorage.getItem("twelvePM");
-    document.getElementById("onePMUserData").innerHTML = localStorage.getItem("onePM");
-    document.getElementById("twoPMUserData").innerHTML = localStorage.getItem("twoPM");
-    document.getElementById("threePMUserData").innerHTML = localStorage.getItem("threePM");
-    document.getElementById("fourPMUserData").innerHTML = localStorage.getItem("fourPM");
-    document.getElementById("fivePMUserData").innerHTML = localStorage.getItem("fivePM");
+    document.getElementById("nineAMUserData").innerHTML = localStorage.getItem("hour-9");
+    document.getElementById("tenAMUserData").innerHTML = localStorage.getItem("hour-10");
+    document.getElementById("elevenAMUserData").innerHTML = localStorage.getItem("hour-11");
+    document.getElementById("twelvePMUserData").innerHTML = localStorage.getItem("hour-12");
+    document.getElementById("onePMUserData").innerHTML = localStorage.getItem("hour-13");
+    document.getElementById("twoPMUserData").innerHTML = localStorage.getItem("hour-14");
+    document.getElementById("threePMUserData").innerHTML = localStorage.getItem("hour-15");
+    document.getElementById("fourPMUserData").innerHTML = localStorage.getItem("hour-16");
+    document.getElementById("fivePMUserData").innerHTML = localStorage.getItem("hour-17");
 }
 
 initialize();
