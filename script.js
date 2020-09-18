@@ -1,19 +1,11 @@
 //Establish variables
 var displayDateEl = document.querySelector("#currentDay");
 // var currentHourEl = document.querySelector(".past");
-// var currentHour = moment().hour();
-// var nineAMEL = document.querySelector("#nineAM");
-// var tenAMEL = document.querySelector("#tenAM");
-// var elevenAMEL = document.querySelector("#elevenAM");
-// var twelvePMEL = document.querySelector("#twelvePM");
-// var onePMEL = document.querySelector("#onePM");
-// var twoPMEL = document.querySelector("#twoPM");
-// var threePMEL = document.querySelector("#threePM");
-// var fourPMEL = document.querySelector("#fourPM");
-// var fivePMEL = document.querySelector("#fivePM");
-// var hours = [nineAMEL, tenAMEL, elevenAMEL, twelvePMEL, onePMEL, twoPMEL, threePMEL, fourPMEL, fivePMEL];
+var currentHour = moment().hour();
+
 // var button = $("<button>");
 // var icon = $("<i>");
+var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
 
 // Display the current time using Moment.js
 console.log(moment().format("dddd, MMMM Do"));
@@ -23,24 +15,19 @@ console.log(moment().format("dddd, MMMM Do"));
 // When app opens, display content for each time block from local storage.
         //it can be done with a loop(more efficiently) or by targeting each time block separately
         // hours.forEach(timeCheck);
+    function colorDisplay() {
+        for (i = 0; i < hours.length; i++) {
+        if (i < currentHour) {
+            $(".description").addClass("past");
+        }
+        else if (i === currentHour) {
+            $(".description").addClass("present");        
+    }
+        else if (i > currentHour) {
+            $(".description").addClass("future");
+        }
+    }
 
-    // function timeCheck() {
-    //     if (currentHour === (hours[i] + 9)) {
-    //         (hours[i]).style.class = ".present"
-    //     }
-    //     else if (currentHour < (hours[i] + 9)) {
-    //         (hours[i]).style.class = ".future"
-    //     }
-    // }
-
-        // for (i = 9; i < 18; i++) {
-        //     if (currentHour === (hours[i] + 9)) {
-        //         (hours[i]).style.class = ".present"
-        //     }
-        //     else if (currentHour < (hours[i] + 9)) {
-        //         (hours[i]).style.class = ".future"
-        //     }
-        // }
 //         function timeCheck() {
 //             console.log(moment().hour());
 //         if (currentHour === 9) {
@@ -117,5 +104,5 @@ function initialize() {
 }
 
 initialize();
-
+colorDisplay();
 
