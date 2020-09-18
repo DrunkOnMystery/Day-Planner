@@ -9,6 +9,7 @@ var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
 
 // Display the current time using Moment.js
 console.log(moment().format("dddd, MMMM Do"));
+console.log(moment().hour());
 
 // Click event to save text area content to Local Storage
 
@@ -16,18 +17,18 @@ console.log(moment().format("dddd, MMMM Do"));
         //it can be done with a loop(more efficiently) or by targeting each time block separately
         // hours.forEach(timeCheck);
     function colorDisplay() {
-        for (i = 0; i < hours.length; i++) {
-        if (i < currentHour) {
-            $(".description").addClass("past");
+        for (i = 9; i < 18; i++) {
+            if (i < currentHour) {
+                $(".hour-" + i).addClass("past");
+            }
+            else if (i === currentHour) {
+                $(".hour-" + i).addClass("present");
+            }
+            else if (i > currentHour) {
+                $(".hour-" + i).addClass("future");
+            }
         }
-        else if (i === currentHour) {
-            $(".description").addClass("present");        
     }
-        else if (i > currentHour) {
-            $(".description").addClass("future");
-        }
-    }
-
 //         function timeCheck() {
 //             console.log(moment().hour());
 //         if (currentHour === 9) {
