@@ -84,3 +84,8 @@ textarea {
   top: 0px;
   left: 0px;
 }
+
+button {
+  justify-self: center;
+  margin: 0px 25px;
+}
