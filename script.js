@@ -12,51 +12,48 @@ console.log(moment().format("dddd, MMMM Do"));
 console.log(moment().hour());
 
 // When app opens, display content for each time block from local storage.
-        //it can be done with a loop(more efficiently) or by targeting each time block separately
 
-
-
-function storeDataNineAM() {
-    var userNotes = document.getElementById("nineAMUserData");
+function storeData9() {
+    var userNotes = document.getElementById("userData-9");
     localStorage.setItem("hour-9", userNotes.value);
 }
 
-function storeDataTenAM() {
-    var userNotes = document.getElementById("tenAMUserData");
+function storeData10() {
+    var userNotes = document.getElementById("userData-10");
     localStorage.setItem("hour-10", userNotes.value);
 }
 
-function storeDataElevenAM() {
-    var userNotes = document.getElementById("elevenAMUserData");
+function storeData11() {
+    var userNotes = document.getElementById("userData-11");
     localStorage.setItem("hour-11", userNotes.value);
 }
 
-function storeDataTwelvePM() {
-    var userNotes = document.getElementById("twelvePMUserData");
+function storeData12() {
+    var userNotes = document.getElementById("userData-12");
     localStorage.setItem("hour-12", userNotes.value);
 }
 
-function storeDataOnePM() {
-    var userNotes = document.getElementById("onePMUserData");
+function storeData13() {
+    var userNotes = document.getElementById("userData-13");
     localStorage.setItem("hour-13", userNotes.value);
 }
 
-function storeDataTwoPM() {
-    var userNotes = document.getElementById("twoPMUserData");
+function storeData14() {
+    var userNotes = document.getElementById("userData-14");
     localStorage.setItem("hour-14", userNotes.value);
 }
 
-function storeDataThreePM() {
-    var userNotes = document.getElementById("threePMUserData");
+function storeData15() {
+    var userNotes = document.getElementById("userData-15");
     localStorage.setItem("hour-15", userNotes.value);
 }
 
-function storeDataFourPM() {
-    var userNotes = document.getElementById("fourPMUserData");
+function storeData16() {
+    var userNotes = document.getElementById("userData-16");
     localStorage.setItem("hour-16", userNotes.value);
 }
-function storeDataFivePM() {
-    var userNotes = document.getElementById("fivePMUserData");
+function storeData17() {
+    var userNotes = document.getElementById("userData-17");
     localStorage.setItem("hour-17", userNotes.value);
 }
 
@@ -81,15 +78,9 @@ function colorDisplay() {
 
 //Retrieve user inputs on initialize
 function initialize() {
-    document.getElementById("nineAMUserData").innerHTML = localStorage.getItem("hour-9");
-    document.getElementById("tenAMUserData").innerHTML = localStorage.getItem("hour-10");
-    document.getElementById("elevenAMUserData").innerHTML = localStorage.getItem("hour-11");
-    document.getElementById("twelvePMUserData").innerHTML = localStorage.getItem("hour-12");
-    document.getElementById("onePMUserData").innerHTML = localStorage.getItem("hour-13");
-    document.getElementById("twoPMUserData").innerHTML = localStorage.getItem("hour-14");
-    document.getElementById("threePMUserData").innerHTML = localStorage.getItem("hour-15");
-    document.getElementById("fourPMUserData").innerHTML = localStorage.getItem("hour-16");
-    document.getElementById("fivePMUserData").innerHTML = localStorage.getItem("hour-17");
+    for (i=9; i<18; i++) {
+        document.getElementById("userData-" + i).innerHTML = localStorage.getItem("hour-" + i);
+    }
 }
 
 initialize();
